@@ -10,6 +10,14 @@ const styles = {
     root: {
         flexGrow: 1,
     },
+    mainText: {
+        textDecoration: 'none',
+        fontWeight: 'bold',
+        color: 'white'
+    },
+    toolbar: {
+        margin: '0 auto'
+    }
 };
 
 class Header extends Component {
@@ -19,9 +27,9 @@ class Header extends Component {
             <div className={classes.root}>
                 <AppBar position="static" color="primary">
                     <Toolbar>
-                        <Typography variant="h6" color="inherit">
-                            <Link to='/'>
-                                <strong>Ad Campaigns Test App!</strong>
+                        <Typography className={classes.toolbar} variant="h6" color="inherit">
+                            <Link className={classes.mainText} to='/'>
+                                Ad Campaigns Test App!
                             </Link>
                         </Typography>
                     </Toolbar>

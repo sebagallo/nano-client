@@ -1,12 +1,25 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
+import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import actions from '../../actions';
 import {withStyles} from '@material-ui/core/styles'
 import AdCard from '../AdCard/AdCard';
 
-const style = {};
+const style = theme => ({
+    AdList: {
+        marginTop: 8,
+        marginBottom: 8,
+        [theme.breakpoints.up("lg")]: {
+            width: 1170,
+            marginTop: 20,
+            marginBottom: 20,
+        },
+        marginLeft: 'auto',
+        marginRight: 'auto'
+    }
+});
 
 class AdList extends Component {
     componentDidMount() {
@@ -17,9 +30,13 @@ class AdList extends Component {
         const {classes, adCampaigns} = this.props;
         if (!adCampaigns) return (<div>Loading...</div>);
         return (
-            <div>
-                {adCampaigns.map(adCampaign => (<AdCard adCampaign={adCampaign}/>))}
-            </div>
+            <Grid justify="center" container className={classes.AdList} spacing={16}>
+                {adCampaigns.map((adCampaign, key) => (
+                    <Grid key={key} item xs={12} sm={4}>
+                        <AdCard adCampaign={adCampaign}/>
+                    </Grid>
+                ))}
+            </Grid>
         )
     }
 }

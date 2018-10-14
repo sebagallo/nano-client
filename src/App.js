@@ -6,7 +6,7 @@ import AdDetail from './components/AdDetail/AdDetail';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
-import green from '@material-ui/core/colors/green';
+import purple from '@material-ui/core/colors/purple';
 import './App.css';
 
 class App extends Component {
@@ -27,7 +27,10 @@ class App extends Component {
 const appTheme = createMuiTheme({
     palette: {
         primary: blue,
-        secondary: green,
+        secondary: purple,
+    },
+    typography: {
+        useNextVariants: true
     }
 });
 

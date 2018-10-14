@@ -9,6 +9,9 @@ const styles = {
     root: {
         flexGrow: 1,
     },
+    footerText: {
+        margin: '0 auto'
+    }
 };
 
 class Footer extends Component {
@@ -18,8 +21,8 @@ class Footer extends Component {
             <div className={classes.root}>
                 <AppBar position="static" color="primary">
                     <Toolbar>
-                        <Typography variant="h6" color="inherit">
-                            <strong>Ad Campaigns Test App!</strong>
+                        <Typography className={classes.footerText} variant="subtitle1" color="inherit">
+                            Made by <a href="https://www.github.com/sebagallo" rel="noopener noreferrer" target="_blank">Sebastiano Gallo</a>
                         </Typography>
                     </Toolbar>
                 </AppBar>
