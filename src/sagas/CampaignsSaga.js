@@ -13,7 +13,7 @@ function* getAdCampaigns() {
 
 function* getAdCampaignsById(action) {
     try {
-        const response = yield call(CampaignsService.getCampaignById(action.payload));
+        const response = yield call(CampaignsService.getCampaignById, action.payload);
         yield put({type: actions.GET_ADCAMPAIGN_BY_ID_SUCCESS, payload: response.data})
     } catch (err) {
         yield put({type: actions.GET_ADCAMPAIGN_BY_ID_ERROR, payload: err})
