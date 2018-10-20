@@ -19,3 +19,16 @@ After installation:
 * `yarn build && yarn serve` for the production environment @ port `5000`
 
 Alternatively, there's a docker image available (this project is supposed to be run through docker-compose anyway)
+
+### Documentation
+
+Component documentation can be at [DOCUMENTATION.MD](DOCUMENTATION.MD)
+
+### TODO
+
+* Unit Tests
+* E2E Tests
+* Error Handling
+* Refactoring components by extracting the css and jsx template (?)
+* If the project becomes big, refactor of reducers/sagas by using combiners
+* Implement a route guard for the detail route that checks if the AdCampaign is already present in the State before calling the API
